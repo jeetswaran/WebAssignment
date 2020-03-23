@@ -1,0 +1,16 @@
+<p>Find Github user</p>
+
+<label>
+  <input [(ngModel)]="searchText" placeholder="Enter User Name"/>
+</label>
+<button (click)="searchUser()">Search</button>
+<table border="1" *ngIf="gitUsers">
+   <th>Users</th>
+   <th>Profile</th>
+  
+       <tr *ngFor="let user of gitUsers">
+         <td>{{ user.userName }} </td>
+         <td><a  target="_blank" href="{{ user.gitHubUrl }}">View Profile</a> </td>
+       </tr>
+ 
+</table>
